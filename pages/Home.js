@@ -19,7 +19,7 @@ class Home extends Component {
 		return (
 			<View style={styles.container}>
 			<StatusBar barStyle = "light-content" backgroundColor = "#30477C" translucent = {true}/>
-				<Header />
+				<Header componentId={this.props.componentId}/>
 				<ScrollView showsHorizontalScrollIndicator={false}>
 					<AddStatus photo={photo}/>
 					<Story />

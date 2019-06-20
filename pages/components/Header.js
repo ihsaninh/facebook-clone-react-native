@@ -4,12 +4,12 @@ import TopBar from './TopBar'
 import { Navigation } from 'react-native-navigation'
 import Profile from "./Profile"
 
-export default class Tab extends Component {
+export default class Header extends Component {
 
 	gotoScreen = (screenName) => {
 		Navigation.push(this.props.componentId, {
 	        component: {
-	            name: 'screenName'
+	            name: screenName
 	        }
 	    })
     }
@@ -19,32 +19,32 @@ export default class Tab extends Component {
 				<TopBar />
 				<View style={styles.tabContainer}>
 					<View style={styles.tabIconContainer}>
-						<TouchableOpacity>
+						<TouchableOpacity onPress= { () => this.gotoScreen('Home')}>
 							<Image style={styles.tabIconImg} source={require('../../src/img/homeActive.png')} />
 						</TouchableOpacity>
 					</View>	
 					<View style={styles.tabIconContainer}>
-						<TouchableOpacity>
+						<TouchableOpacity onPress= { () => this.gotoScreen('AddFriend')}>
 							<Image style={styles.tabIconImg} source={require('../../src/img/group.png')} />
 						</TouchableOpacity>
 					</View>
 					<View style={styles.tabIconContainer}>
-						<TouchableOpacity>
+						<TouchableOpacity onPress= { () => this.gotoScreen('MarketPlace')}>
 							<Image style={styles.tabIconImg} source={require('../../src/img/watch.png')} />
 						</TouchableOpacity>
 					</View>
 					<View style={styles.tabIconContainer}>
-						<TouchableOpacity>
+						<TouchableOpacity onPress= { () => this.gotoScreen('Notfound')}>
 							<Image style={styles.tabIconImg} source={require('../../src/img/profile.png')} />
 						</TouchableOpacity>
 					</View>
 					<View style={styles.tabIconContainer}>
-						<TouchableOpacity>
+						<TouchableOpacity onPress= { () => this.gotoScreen('Notfound')}>
 							<Image style={styles.tabIconImg} source={require('../../src/img/notification.png')} />
 						</TouchableOpacity>
 					</View>
 					<View style={styles.tabIconContainer}>
-						<TouchableOpacity>
+						<TouchableOpacity onPress= { () => this.gotoScreen('NavigationMenu')}>
 							<Image style={styles.tabIconImg} source={require('../../src/img/more.png')} />
 						</TouchableOpacity>
 					</View>

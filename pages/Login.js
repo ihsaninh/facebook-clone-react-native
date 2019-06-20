@@ -14,7 +14,9 @@ import {
 } from 'react-native';
 import styles from '../src/style/loginStyle.js';
 import { Navigation } from 'react-native-navigation';
-import MarketPlace from './MarketPlace';
+// import MarketPlace from './MarketPlace';
+// import AddFriend from './AddFriend';
+import Home from './Home';
 
 class Login extends Component {
 

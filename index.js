@@ -1,17 +1,13 @@
-import { Navigation } from "react-native-navigation";
-import Login from "./pages/Login";
-import Home from "./pages/Home";
-import MarketPlace from "./pages/MarketPlace";
+import {Navigation} from 'react-native-navigation'
+import {routeScreen} from './pages/routeScreen';
 
-Navigation.registerComponent("Login", () => Login);
-Navigation.registerComponent("Home", () => Home);
-Navigation.registerComponent("MarketPlace", () => MarketPlace);
+routeScreen()
 
 Navigation.events().registerAppLaunchedListener(() => {
     Navigation.setRoot({
         root: {
             stack: {
-                id: "AppStack",
+                id: "App",
                 children: [
                     {
                         component: {

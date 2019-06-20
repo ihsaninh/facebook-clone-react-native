@@ -6,7 +6,7 @@ class MarketPlace extends Component {
 	render() {
 		return (
 			<View style={styles.marketplaceContainer}>
-				<Header />
+				<Header componentId={this.props.componentId}/>
 				<View style={styles.marketplaceCategory}>
 					<View>
 						<Image></Image>
