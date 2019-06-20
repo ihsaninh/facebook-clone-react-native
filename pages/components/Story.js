@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {View,Text,Image, StyleSheet, ScrollView} from 'react-native'
+import React, { Component } from 'react'
+import { View,Text,Image, StyleSheet, ScrollView } from 'react-native'
 
 export default class Story extends Component {
 	constructor(props) {

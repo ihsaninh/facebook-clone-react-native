@@ -5,7 +5,8 @@ import {
 	Image,
 	TextInput,
 	ScrollView,
-	StyleSheet
+	StyleSheet,
+	StatusBar
 } from 'react-native';
 import Header from '../pages/components/Header'
 import AddStatus from '../pages/components/AddStatus'
@@ -17,6 +18,7 @@ class Home extends Component {
 		const photo  = require('../src/img/photo.jpeg');
 		return (
 			<View style={styles.container}>
+			<StatusBar barStyle = "light-content" backgroundColor = "#30477C" translucent = {true}/>
 				<Header />
 				<ScrollView showsHorizontalScrollIndicator={false}>
 					<AddStatus photo={photo}/>

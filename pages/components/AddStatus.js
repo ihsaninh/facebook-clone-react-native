@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
-import {View, Text, TextInput, Image, StyleSheet} from 'react-native';
+import { View, Text, TextInput, Image, StyleSheet } from 'react-native';
 
 export default class AddStatus extends Component {
 	render() {
 		const upload = require('../../src/img/upload.png');
 		return(
-			<View style={styles.addStatus}>
-				<View style={styles.addStatusContainer}>
-					<View style={styles.addStatusPic}>
-						<Image style={styles.addStatusPicture} source={this.props.photo} />
+			<View>
+				<View style={styles.addStatus}>
+					<View style={styles.addStatusContainer}>
+						<View style={styles.addStatusPic}>
+							<Image style={styles.addStatusPicture} source={this.props.photo} />
+						</View>
+					</View>
+					<View style={styles.textInputContainer}>
+						<TextInput style={styles.TextInputStatus} placeholder='Apa yang Anda pikirkan?' placeholderTextColor='grey' />
+					</View>
+					<View style={styles.statusUploadContainer}>
+						<View style={styles.statusUpload}>
+							<Image style={styles.statusImageUpload} source={upload} />
+						</View>
 					</View>
 				</View>
-				<View style={styles.textInputContainer}>
-					<TextInput style={styles.TextInputStatus} placeholder='Apa yang Anda pikirkan?' placeholderTextColor='grey' />
-				</View>
-				<View style={styles.statusUploadContainer}>
-					<View style={styles.statusUpload}>
-						<Image style={styles.statusImageUpload} source={upload} />
-					</View>
-				</View>
+			<View style={styles.lineBorder}></View>
 			</View>
 		)
 	}
@@ -72,5 +75,9 @@ const styles = StyleSheet.create({
 	statusImageUpload: {
 		height: 28, 
 		width: 20
+	},
+	lineBorder: {
+		borderColor: '#DDDDE4', 
+		borderWidth: 3,
 	}
 })

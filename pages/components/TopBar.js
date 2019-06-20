@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Text, Image, StyleSheet, TextInput} from 'react-native'
+import { View, Text, Image, StyleSheet, TextInput } from 'react-native'
 
 export default class TopBar extends Component {
 	render() {
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 	},
 	topBar: {
-		height: 40, 
+		height: 45, 
 		backgroundColor: '#4266B3'
 	},
 	searchBar: {
@@ -46,9 +46,9 @@ const styles = StyleSheet.create({
 		flex: 1
 	},
 	imgCamera: {
-		height: 20, 
-		width: 24, 
-		marginTop: 10
+		height: 18, 
+		width: 22, 
+		marginTop: 14
 	},
 	searchIconContainer: {
 		flex: 8, 
@@ -72,18 +72,16 @@ const styles = StyleSheet.create({
 		flex: 14,
 	},
 	searchTextIputPlaceholder: {
-		height: 35, 
-		marginTop: -2, 
+		height: 35,  
 		color: 'white'
 	},
 	searchMessIconContainer: {
-		marginTop: 3, 
 		marginLeft: 10, 
 		flex: 1
 	},
 	searchMessIcon: {
-		height: 23, 
-		width: 24, 
-		marginTop: 5
+		height: 20, 
+		width: 20, 
+		marginTop: 13
 	}
 })

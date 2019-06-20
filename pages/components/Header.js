@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import {View, Text, Image, TextInput, StyleSheet, TouchableOpacity} from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import TopBar from './TopBar'
-import {Navigation} from 'react-native-navigation'
+import { Navigation } from 'react-native-navigation'
 import Profile from "./Profile"
 
 export default class Tab extends Component {
@@ -56,7 +56,10 @@ export default class Tab extends Component {
 
 const styles = StyleSheet.create({
 	headerContainer: {
-		height: 80,
+		height: 85,
+		borderBottomWidth: 1,
+		borderBottomColor: '#c1c4c9',
+		paddingBottom: 3,
 	},
 	tabContainer: {
 		height: 40, 
