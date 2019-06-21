@@ -12,7 +12,7 @@ export default class Comment extends Component {
 					<Image style={styles.singlePostReactIcon} source={like} />
 					<Image style={styles.singlePostReactIcon} source={haha} />
 					<Image style={styles.singlePostReactIcon} source={wow} />
-					<Text style={styles.singlePostReactIcon}>{this.props.likeCount}</Text>
+					<Text style={styles.singlePostLikeCount}>{this.props.likeCount}</Text>
 				</View>
 				<View style={styles.singlePostCommentsCount}>
 					<Text>{this.props.commentCount}</Text>
@@ -32,16 +32,22 @@ const styles = StyleSheet.create({
 	singlePostReact: {
 		flex: 1, 
 		flexDirection: 'row',
+		marginTop: 5
 	},
 	singlePostReactIcon: {
-		height: 20, 
-		width: 20, 
+		height: 18, 
+		width: 18, 
 		borderRadius: 25,
+	},
+	singlePostLikeCount: {
+		paddingLeft: 3,
+		paddingTop: 2,
 	},
 	singlePostCommentsCount: {
 		flex: 1, 
 		alignItems: 'flex-end', 
 		justifyContent: 'flex-end', 
 		marginRight: 10,
+		marginTop: 5
 	},
 })

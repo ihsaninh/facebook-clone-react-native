@@ -31,6 +31,69 @@ class NavigationMenu extends Component {
 		    subtitle: ''
 		  }
 	]
+
+	const navlists = [
+		  {
+		    name: 'BKK SMK NEGERI 2 BOGOR',
+		    avatar_url: require('../src/img/BKK.png'),
+		  },
+		  {
+		    name: 'Teman',
+		    avatar_url: require('../src/img/friend.png'),
+		  },
+		  {
+		 	name: 'Messenger',
+		    avatar_url: require('../src/img/messages.png'),
+		  },
+		  {
+		 	name: 'Halaman',
+		    avatar_url: require('../src/img/pages.png'),
+		  },
+		  {
+		 	name: 'Grup',
+		    avatar_url: require('../src/img/grouplist.png'),
+		  },
+		  {
+		 	name: 'Marketplace',
+		    avatar_url: require('../src/img/marketplace.png'),
+		  },
+		  {
+		 	name: 'Video di Watch',
+		    avatar_url: require('../src/img/watcht.png'),
+		  },
+		  {
+		 	name: 'Acara',
+		    avatar_url: require('../src/img/event.png'),
+		  },
+		  {
+		 	name: 'Kenangan',
+		    avatar_url: require('../src/img/memories.png'),
+		  },
+		  {
+		 	name: 'Tersimpan',
+		    avatar_url: require('../src/img/saved.png'),
+		  },
+		  {
+		 	name: 'Tempat di Sekitar',
+		    avatar_url: require('../src/img/location.png'),
+		  },
+		  {
+		 	name: 'Teman di Sekitar',
+		    avatar_url: require('../src/img/friendnear.png'),
+		  },
+		  {
+		 	name: 'Lihat Lainnya',
+		    avatar_url: require('../src/img/see-more.png'),
+		  },
+		  {
+		 	name: 'Pengaturan dan Privasi',
+		    avatar_url: require('../src/img/settings-privacy.png'),
+		  },
+		  {
+		 	name: 'Keluar',
+		    avatar_url: require('../src/img/logout.png'),
+		  },
+	]
 		return(
 			<View>
 			<Header componentId={this.props.componentId} />
@@ -40,9 +103,9 @@ class NavigationMenu extends Component {
 					    lists.map((item, index) => (
 					      <ListItem
 					        key={index}
-					        leftAvatar={{ source: { uri: item.avatar_url } }}
+					        leftAvatar={{ height: 30, width: 30, source: { uri: item.avatar_url } }}
 					        title={item.name}
-					        subtitle={item.subtitle} titleStyle={{ fontSize: 20, color: '#212326' }}
+					        subtitle={item.subtitle} titleStyle={{ fontSize: 16, color: '#212326' }}
 					      />
 					    ))
 					  }
@@ -50,11 +113,11 @@ class NavigationMenu extends Component {
 					<Divider style={{ backgroundColor: '#CED2D7' }} />
 					<View style={{marginBottom: 80}}>
 					  {
-					    this.state.navLists.map((navlist, index) => (
+					    navlists.map((navlist, index) => (
 					      <ListItem
 					        key={index}
-					        leftIcon={{name: navlist.icon, type: navlist.type}}
-					        title={navlist.name}
+					        leftAvatar= {<Image style={{height: 30, width: 30}} source={navlist.avatar_url} /> }
+					        title={navlist.name} titleStyle={{ fontSize: 16, color: '#212326' }} size={50}
 					      />
 					    ))
 					  }

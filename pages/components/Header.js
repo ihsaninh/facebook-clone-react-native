@@ -56,13 +56,13 @@ export default class Header extends Component {
 
 const styles = StyleSheet.create({
 	headerContainer: {
-		height: 85,
+		height: 90,
 		borderBottomWidth: 1,
 		borderBottomColor: '#c1c4c9',
 		paddingBottom: 3,
 	},
 	tabContainer: {
-		height: 40, 
+		height: 60, 
 		flexDirection: 'row', 
 		justifyContent: 'center', 
 		alignItems: 'center', 
@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
 		paddingTop: 5
 	},
 	tabIconContainer: {
-		flex:1
+		flex:1,
+		marginTop: 20,
 	},
 	tabIconImg: {
 		height: 24, width: 24

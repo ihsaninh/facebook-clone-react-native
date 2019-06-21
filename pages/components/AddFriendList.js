@@ -50,7 +50,8 @@ const styles = StyleSheet.create({
 	},
 	friendlistContainer: {
 		flexDirection: 'row', 
-		marginTop: 10
+		marginTop: 10,
+		marginBottom: 5
 	},
 	friendImg: {
 		width: 100, 
@@ -58,7 +59,7 @@ const styles = StyleSheet.create({
 		borderRadius: 100
 	},
 	addFriendList: {
-		marginLeft: 10
+		marginLeft: 10,
 	},
 	addFriendName: {
 		fontSize: 18, 

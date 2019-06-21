@@ -10,11 +10,8 @@ import {
 	StatusBar,
 	TouchableOpacity,
 	TouchableHighlight,
-	Modal 
 } from 'react-native';
 import { Navigation } from 'react-native-navigation';
-// import MarketPlace from './MarketPlace';
-// import AddFriend from './AddFriend';
 import Home from './Home';
 
 class Login extends Component {
@@ -29,13 +26,8 @@ class Login extends Component {
 	      forgotPassword: 'LUPA KATA SANDI?',
 	      or: 'ATAU',
 	      createAccount: 'BUAT AKUN FACEBOOK BARU',
-	      modalVisible: false,
 	    }
 	}
-
-	  setModalVisible(visible) {
-	    this.setState({modalVisible: visible});
-	  }
 
 	 englishLang = () => {
       this.setState({ 
@@ -61,22 +53,6 @@ class Login extends Component {
 		return (
 			<ScrollView>
 			<StatusBar barStyle = "dark-content" backgroundColor = "#30477C" translucent = {true}/>
-			<Modal style={{position: 'relative', height: '100%'}} animationType="slide" transparent={false} visible={this.state.modalVisible} onRequestClose={() => {Alert.alert('Modal has been closed.'); }}>
-		          <View style={{marginTop: 22}}>
-		            <View>
-		              <Text>Hello World!</Text>
-
-		              <View style={{position: 'absolute', bottom: 0, right: 0}}>
-		              <TouchableHighlight
-		                onPress={() => {
-		                  this.setModalVisible(!this.state.modalVisible);
-		                }}>
-		                <Text>Hide Modal</Text>
-		              </TouchableHighlight>
-		              </View>
-		            </View>
-		          </View>
-       		</Modal>
 			<View style={styles.container}>
 				<View style={styles.banner}>
 					<Image style={styles.bannerImg} source={require('../src/img/banner.png')} />

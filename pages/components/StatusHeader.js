@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
 		height: 30, 
 		width: 30, 
 		borderRadius: 25,
+		marginTop: 3
 	},
 	singlePostAuthor: {
 		flex: 9, 

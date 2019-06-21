@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
 	},
 	singlePostBtnContent: {
 		justifyContent: 'center', 
-		alignItems: 'center'
+		alignItems: 'center',
+		marginTop: 2,
 	},
 	singlePostBtnIcon: {
 		height: 20, 

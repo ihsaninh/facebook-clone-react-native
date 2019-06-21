@@ -46,9 +46,9 @@ const styles = StyleSheet.create({
 		flex: 1
 	},
 	imgCamera: {
-		height: 18, 
-		width: 22, 
-		marginTop: 14
+		height: 34, 
+		width: 34,
+		marginTop: 5 
 	},
 	searchIconContainer: {
 		flex: 8, 
@@ -64,8 +64,8 @@ const styles = StyleSheet.create({
 		flex: 1
 	},
 	searchIcon: {
-		height: 11, 
-		width: 11, 
+		height: 14, 
+		width: 14, 
 		marginTop: 10
 	},
 	searchTextIput: {
@@ -80,8 +80,9 @@ const styles = StyleSheet.create({
 		flex: 1
 	},
 	searchMessIcon: {
-		height: 20, 
-		width: 20, 
-		marginTop: 13
+		height: 34, 
+		width: 34,
+		marginLeft: -8,
+		marginTop: 5 
 	}
 })

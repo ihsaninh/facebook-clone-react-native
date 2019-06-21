@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { View, Text, ScrollView, Image, Button, StyleSheet, TouchableOpacity} from 'react-native';
 import Header from './components/Header';
 import AddFriendList from './components/AddFriendList'
+import ButtonOpacity from './components/ButtonOpacity'
+
 
 class AddFriend extends Component {
 	constructor(props) {
@@ -19,15 +21,11 @@ class AddFriend extends Component {
 						<View style={styles.addfriendWrapper}>
 						<View style={styles.topWrapper}>
 							<View style={styles.friendlist}>
-								<TouchableOpacity style={styles.friendlistRequest}>
-									<Text style={styles.friendlistRequestText}>Requests</Text>
-								</TouchableOpacity>
-								<TouchableOpacity style={styles.friendlistRequest} activeOpacity = { .5 }>
-									<Text style={styles.friendlistRequestText}>All Request</Text>
-								</TouchableOpacity>
+								<ButtonOpacity buttonText='Permintaan' />
+								<ButtonOpacity buttonText='Semua Teman' />
 							</View>
 						</View>
-						<Text style={styles.title}>People You May Know</Text>
+						<Text style={styles.title}>Orang yang Mungkin Anda Kenal</Text>
 							{
 								this.state.list.map((item, index) => {
 									return(
@@ -67,20 +65,4 @@ const styles = StyleSheet.create({
 	friendlist: {
 		flexDirection: 'row'
 	},
-	friendlistRequest: {
-		marginTop: 10,
-		marginRight: 5,
-	    paddingTop:10,
-	    paddingBottom:10,
-	    backgroundColor:'#EBEDF0',
-	    borderRadius:25,
-	    borderWidth: 1,
-	    borderColor: '#fff',
-	    width: 90
-	},
-  friendlistRequestText:{
-      color:'#1C1E21',
-      textAlign:'center',
-      fontWeight: '500'
-  },
 })
