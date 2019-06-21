@@ -19,7 +19,7 @@ class AddFriend extends Component {
 						<View style={styles.addfriendWrapper}>
 						<View style={styles.topWrapper}>
 							<View style={styles.friendlist}>
-								<TouchableOpacity style={styles.friendlistRequest} activeOpacity = { .5 }>
+								<TouchableOpacity style={styles.friendlistRequest}>
 									<Text style={styles.friendlistRequestText}>Requests</Text>
 								</TouchableOpacity>
 								<TouchableOpacity style={styles.friendlistRequest} activeOpacity = { .5 }>

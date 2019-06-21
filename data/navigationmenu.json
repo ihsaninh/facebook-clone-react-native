@@ -1,0 +1,80 @@
+[
+		  {
+		    "name": "Teman",
+		    "icon": "users",
+		    "type": "entypo"
+		  },
+		  {
+		  	"name": "Messenger",
+		    "icon": "facebook-messenger",
+		    "type": "material-community",
+		  },
+		  {
+		  	"name": "Grup",
+		  	"icon": "group",
+		    "type": "font-awesome"
+		  },
+		  {
+		  	"name": "MarketPlace",
+		  	"icon": "shop",
+		    "type": "entypo"
+		  },
+		  {
+		  	"name": "Video di Watch",
+		    "icon": "personal-video",
+		    "type": "material"
+		  },
+		   {
+		  	"name": "Acara",
+		    "icon": "event",
+		    "type": "material"
+		  },
+		   {
+		  	"name": "Kenangan",
+		    "icon": "back-in-time",
+		    "type": "entypo"
+		  },
+		  {
+		  	"name": "Tersimpan",
+		    "icon": "bookmark",
+		    "type": "entypo"
+		  },
+		  {
+		  	"name": "Teman di Sekitar",
+		    "icon": "user",
+		    "type": "entypo"
+		  },
+		   {
+		  	"name": "Keluar",
+		    "icon": "logout",
+		    "type": "material-community"
+		  },
+		  // {
+		  // 	"name": "Acara",
+		  //   "avatar_url": "http://codeconverter.cf/img/event.png",
+		  // },
+		  // {
+		  // 	"name": "Kenangan",
+		  //   "avatar_url": "http://codeconverter.cf/img/memories.png",
+		  // },
+		  // {
+		  // 	"name": "Tersimpan",
+		  //   "avatar_url": "http://codeconverter.cf/img/saved.png",
+		  // },
+		  // {
+		  // 	"name": "Halaman",
+		  //   "avatar_url": "http://codeconverter.cf/img/pages.png",
+		  // },
+		  // {
+		  // 	"name": "Tempat di Sekitar",
+		  //   "avatar_url": "http://codeconverter.cf/img/location.png",
+		  // },
+		  // {
+		  // 	"name": "Teman di Sekitar",
+		  //   "avatar_url": "http://codeconverter.cf/img/friendnear.png",
+		  // },
+		  // {
+		  // 	"name": "Lihat Lainnya",
+		  //   "avatar_url": "http://codeconverter.cf/img/other.png",
+		  // }
+]

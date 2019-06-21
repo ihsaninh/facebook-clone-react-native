@@ -26,5 +26,5 @@ Navigation.setDefaultOptions({
     },
     layout: {
         backgroundColor: "white"
-    }
+    },
 });
