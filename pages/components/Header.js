@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
 import TopBar from './TopBar'
 import { Navigation } from 'react-native-navigation'
 import Profile from "./Profile"
@@ -16,6 +16,7 @@ export default class Header extends Component {
 	render() {
 		return(
 			<View style={styles.headerContainer}>
+			<StatusBar backgroundColor="#30477C" barStyle="light-content" />
 				<TopBar />
 				<View style={styles.tabContainer}>
 					<View style={styles.tabIconContainer}>
@@ -39,7 +40,7 @@ export default class Header extends Component {
 						</TouchableOpacity>
 					</View>
 					<View style={styles.tabIconContainer}>
-						<TouchableOpacity onPress= { () => this.gotoScreen('Notfound')}>
+						<TouchableOpacity onPress= { () => this.gotoScreen('Notification')}>
 							<Image style={styles.tabIconImg} source={require('../../src/img/notification.png')} />
 						</TouchableOpacity>
 					</View>

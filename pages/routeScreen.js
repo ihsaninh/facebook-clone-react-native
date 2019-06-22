@@ -7,6 +7,7 @@ import MarketPlace from "./MarketPlace";
 import AddFriend from "./AddFriend";
 import NavigationMenu from "./NavigationMenu";
 import Notfound from "./Notfound";
+import Notification from "./Notification";
 
 export function routeScreen() {
 	Navigation.registerComponent("Login", () => Login);
@@ -15,4 +16,5 @@ export function routeScreen() {
 	Navigation.registerComponent("AddFriend", () => AddFriend);
 	Navigation.registerComponent("NavigationMenu", () => NavigationMenu);
 	Navigation.registerComponent("Notfound", () => Notfound);
+	Navigation.registerComponent("Notification", () => Notification);
 }
