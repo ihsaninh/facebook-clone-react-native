@@ -100,7 +100,7 @@ class NavigationMenu extends Component {
         return (
             <View>
                 <Header componentId={this.props.componentId} />
-                <ScrollView>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <View>
                         {lists.map((item, index) => (
                             <ListItem

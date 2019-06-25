@@ -16,7 +16,7 @@ class Home extends Component {
                     translucent={true}
                 />
                 <Header componentId={this.props.componentId} />
-                <ScrollView showsHorizontalScrollIndicator={false}>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <AddStatus photo={photo} />
                     <Story />
                     <View style={styles.lineBorder} />

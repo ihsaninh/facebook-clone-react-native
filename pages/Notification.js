@@ -20,7 +20,7 @@ class Notification extends Component {
         return (
             <View>
                 <Header componentId={this.props.componentId} />
-                <ScrollView>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <View style={styles.notificationWrapper}>
                         <View>
                             <Text style={styles.notificationheaderTitle}>

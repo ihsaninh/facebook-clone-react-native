@@ -16,7 +16,7 @@ class AddFriend extends Component {
         return (
             <View style={styles.addfriendContainer}>
                 <Header componentId={this.props.componentId} />
-                <ScrollView>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <View style={styles.addfriendWrapper}>
                         <View style={styles.topWrapper}>
                             <View style={styles.friendlist}>

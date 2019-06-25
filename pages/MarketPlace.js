@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Image, StyleSheet, ScrollView } from "react-native";
-import { ActivityIndicator } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import Header from "../pages/components/Header";
 import ButtonOpacity from "./components/ButtonOpacity";
 import MarketPlaceGrid from "./components/MarketPlaceGrid";
@@ -23,7 +22,7 @@ class MarketPlace extends Component {
                         </View>
                     </ScrollView>
                 </View>
-                <ScrollView>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <View>
                         <View style={styles.marketplaceWrapper}>
                             <Text style={styles.marketplaceTitle}>

@@ -22,7 +22,9 @@ Navigation.events().registerAppLaunchedListener(() => {
 
 Navigation.setDefaultOptions({
     topBar: {
-        visible: false
+        drawBehind: true,
+        visible: false,
+        animate: false
     },
     layout: {
         backgroundColor: "white"
