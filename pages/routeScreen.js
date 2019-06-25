@@ -10,11 +10,11 @@ import Notfound from "./Notfound";
 import Notification from "./Notification";
 
 export function routeScreen() {
-	Navigation.registerComponent("Login", () => Login);
-	Navigation.registerComponent("MarketPlace", () => MarketPlace);
-	Navigation.registerComponent("Home", () => Home);
-	Navigation.registerComponent("AddFriend", () => AddFriend);
-	Navigation.registerComponent("NavigationMenu", () => NavigationMenu);
-	Navigation.registerComponent("Notfound", () => Notfound);
-	Navigation.registerComponent("Notification", () => Notification);
+    Navigation.registerComponent("Login", () => Login);
+    Navigation.registerComponent("MarketPlace", () => MarketPlace);
+    Navigation.registerComponent("Home", () => Home);
+    Navigation.registerComponent("AddFriend", () => AddFriend);
+    Navigation.registerComponent("NavigationMenu", () => NavigationMenu);
+    Navigation.registerComponent("Notfound", () => Notfound);
+    Navigation.registerComponent("Notification", () => Notification);
 }

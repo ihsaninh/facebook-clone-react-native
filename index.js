@@ -1,7 +1,7 @@
-import {Navigation} from 'react-native-navigation'
-import {routeScreen} from './pages/routeScreen';
+import { Navigation } from "react-native-navigation";
+import { routeScreen } from "./pages/routeScreen";
 
-routeScreen()
+routeScreen();
 
 Navigation.events().registerAppLaunchedListener(() => {
     Navigation.setRoot({
@@ -26,5 +26,5 @@ Navigation.setDefaultOptions({
     },
     layout: {
         backgroundColor: "white"
-    },
+    }
 });

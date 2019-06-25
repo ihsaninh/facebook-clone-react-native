@@ -1,13 +1,5 @@
 import React, { Component } from "react";
-import {
-    Text,
-    View,
-    Image,
-    TextInput,
-    ScrollView,
-    StyleSheet,
-    StatusBar
-} from "react-native";
+import { View, ScrollView, StyleSheet, StatusBar } from "react-native";
 import Header from "../components/Header";
 import AddStatus from "./components/AddStatus";
 import Status from "./components/Status";

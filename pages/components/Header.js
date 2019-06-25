@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image, TextInput, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
+import { View, Image, StyleSheet, TouchableOpacity, StatusBar } from 'react-native';
 import TopBar from './TopBar'
 import { Navigation } from 'react-native-navigation'
 import Profile from "./Profile"
