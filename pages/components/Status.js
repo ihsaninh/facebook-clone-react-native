@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, StyleSheet } from "react-native";
+import TimeAgo from 'react-native-timeago';
 import StatusHeader from "./StatusHeader";
 import Content from "./Content";
 import Comment from "./Comment";
@@ -12,33 +13,35 @@ export default class Status extends Component {
 
         this.state = {
             // status: require("../../data/status.json")
-            data: []
+            posts: []
         };
     }
 
     componentDidMount() {
         axios.get('http://192.168.0.26:3000/feeds')
           .then(res => {
-            const data = res.data;
-            this.setState({ data });
+            console.log(res.data[0].user.name)
+            const posts = res.data;
+            this.setState( { 
+                posts: posts
+            });
           })
       }
-
 
     render() {
         return (
             <View>
                 <View style={styles.lineBorder} />
-                {this.state.data.map((item, index) => {
+                {this.state.posts.map((post, index) => {
                     return (
                         <View key={index}>
                             <View style={styles.peopleStatusContainer}>
                                 <StatusHeader
-                                    name={item.user.name}
-                                    postTime="2 jam yang lalu"
-                                    peopleImg={{uri: item.user.avatar}}
+                                    name={post.user.name}
+                                    postTime={<TimeAgo time={post.createdAt} />}
+                                    peopleImg={{uri: post.user.avatar}}
                                 />
-                                <Content fill={item.status} />
+                                <Content fill={post.status} />
                                 <Comment
                                     likeCount="12"
                                     commentCount="89 komentar"

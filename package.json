@@ -9,10 +9,13 @@
   "dependencies": {
     "@react-native-community/async-storage": "^1.5.0",
     "axios": "^0.19.0",
+    "moment": "^2.24.0",
     "react": "16.8.3",
     "react-native": "0.59.9",
     "react-native-elements": "^1.1.0",
+    "react-native-modal": "^11.0.2",
     "react-native-navigation": "^2.21.0-experimental.4",
+    "react-native-timeago": "^0.4.0",
     "react-native-vector-icons": "^6.5.0"
   },
   "devDependencies": {

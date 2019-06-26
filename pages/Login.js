@@ -16,7 +16,8 @@ class Login extends Component {
             or: "ATAU",
             createAccount: "BUAT AKUN FACEBOOK BARU",
             inputEmail: "",
-            inputPassword: ""
+            inputPassword: "",
+            focused: false
         };
     }
 
@@ -31,6 +32,12 @@ class Login extends Component {
             createAccount: "Create a New Account"
         });
     };
+
+    onFocusChange = () => {
+        this.setState({ 
+            focused: true
+        });
+    }
 
     handleLogin = () => {
         axios
@@ -88,8 +95,8 @@ class Login extends Component {
                 <View style={styles.container}>
                     <View style={styles.banner}>
                         <Image
-                            style={styles.bannerImg}
-                            source={require("../src/img/banner.png")}
+                            style={(this.state.focused) ? styles.WithoutBanner  :  styles.bannerImg}
+                            source={(this.state.focused) ? require("../src/img/facebookLogo.png")  :  require("../src/img/banner.png")}
                         />
                     </View>
                     <View style={styles.content}>
@@ -111,6 +118,7 @@ class Login extends Component {
                         </View>
                         <View style={styles.textInput}>
                             <TextInput
+                                onFocus={this.onFocusChange}
                                 style={styles.formInput}
                                 placeholder={this.state.email}
                                 onChangeText={inputEmail =>
@@ -118,6 +126,7 @@ class Login extends Component {
                                 }
                             />
                             <TextInput
+                                onFocus={this.onFocusChange}
                                 style={styles.formInput}
                                 placeholder={this.state.password}
                                 secureTextEntry={true}
@@ -171,6 +180,13 @@ const styles = StyleSheet.create({
     bannerImg: {
         height: 184,
         width: "100%"
+    },
+    WithoutBanner: {
+        height: 72,
+        width: 73,
+        marginLeft: 120,
+        marginTop: 40,
+        marginBottom: 10
     },
     lang: {
         paddingTop: 10,

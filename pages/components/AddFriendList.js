@@ -9,6 +9,22 @@ import {
 } from "react-native";
 
 class AddFriendList extends Component {
+
+    constructor(props) {
+      super(props);
+    
+      this.state = {
+         addButton: 'Tambah',
+         deleteButton: 'Hapus'
+      };
+    }
+
+    addButtonClick = () => {
+        this.setState({
+          addButton: 'Ditambahkan'
+        })
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -30,10 +46,10 @@ class AddFriendList extends Component {
                         </Text>
                         <View style={styles.addFriendButtonContainer}>
                             <View style={styles.addFriendButton}>
-                                <TouchableOpacity
+                                <TouchableOpacity onPress={this.addButtonClick}
                                     style={styles.ButtonAddStyle}
                                     activeOpacity={0.5}>
-                                    <Text style={styles.TextStyle}>Tambah</Text>
+                                    <Text style={styles.TextStyle}>{this.state.addButton}</Text>
                                 </TouchableOpacity>
                             </View>
                             <View style={styles.addFriendButton}>

@@ -88,7 +88,8 @@ const styles = StyleSheet.create({
         height: 90,
         borderBottomWidth: 1,
         borderBottomColor: "#c1c4c9",
-        paddingBottom: 3
+        paddingBottom: 3,
+        marginTop: 25
     },
     tabContainer: {
         height: 60,

@@ -1,21 +1,53 @@
 import React, { Component } from "react";
-import { View, Image, StyleSheet, Text, TouchableOpacity} from "react-native";
+import { View, Image, StyleSheet, Text, TouchableOpacity, Button, Modal, TouchableHighlight} from "react-native";
 import { Navigation } from "react-native-navigation";
 
 export default class AddStatus extends Component {
 
-    gotoScreen = () => {
-        Navigation.push(this.props.componentId, {
-            component: {
-                name: "Tes"
-            }
-        });
-    };
+    // gotoScreen = (screenName) => {
+    //    Navigation.push(this.props.componentId, {
+    //         component: {
+    //             name: "MarketPlace"
+    //         }
+    //     });
+    // };
+
+    constructor(props) {
+      super(props);
+    
+      this.state = {
+        modalVisible: false,
+      };
+    }
+
+    setModalVisible(visible) {
+        this.setState({modalVisible: visible});
+      }
 
     render() {
         const upload = require("../../src/img/upload.png");
         return (
             <View>
+                <Modal
+                  animationType="slide"
+                  transparent={false}
+                  visible={this.state.modalVisible}
+                  onRequestClose={() => {
+                    Alert.alert('Modal has been closed.');
+                  }}>
+                  <View style={{marginTop: 22}}>
+                    <View>
+                      <Text>Hello World!</Text>
+
+                      <TouchableHighlight
+                        onPress={() => {
+                          this.setModalVisible(!this.state.modalVisible);
+                        }}>
+                        <Text>Hide Modal</Text>
+                      </TouchableHighlight>
+                    </View>
+                  </View>
+                </Modal>
                 <View style={styles.addStatus}>
                     <View style={styles.addStatusContainer}>
                         <View style={styles.addStatusPic}>
@@ -26,7 +58,8 @@ export default class AddStatus extends Component {
                         </View>
                     </View>
                         <View style={styles.textInputContainer}>
-                            <TouchableOpacity onPress={() => this.gotoScreen()}>
+                            <TouchableOpacity onPress={onPress=() => {
+            this.setModalVisible(true)}}>
                                <Text style={styles.textInputText}>Apa yang anda pikirkan</Text>
                             </TouchableOpacity>
                         </View>

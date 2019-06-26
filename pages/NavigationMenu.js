@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Image, ScrollView } from "react-native";
+import { View, Image, ScrollView, TouchableOpacity } from "react-native";
 import Header from "./components/Header";
 import { ListItem } from "react-native-elements";
 import { Divider } from "react-native-elements";
@@ -103,8 +103,8 @@ class NavigationMenu extends Component {
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <View>
                         {lists.map((item, index) => (
+                        <TouchableOpacity key={index}>
                             <ListItem
-                                key={index}
                                 leftAvatar={{
                                     height: 30,
                                     width: 30,
@@ -114,13 +114,14 @@ class NavigationMenu extends Component {
                                 subtitle={item.subtitle}
                                 titleStyle={{ fontSize: 16, color: "#212326" }}
                             />
+                        </TouchableOpacity>
                         ))}
                     </View>
                     <Divider style={{ backgroundColor: "#CED2D7" }} />
                     <View style={{ marginBottom: 80 }}>
                         {navlists.map((navlist, index) => (
+                            <TouchableOpacity  key={index}>
                             <ListItem
-                                key={index}
                                 leftAvatar={
                                     <Image
                                         style={{ height: 30, width: 30 }}
@@ -131,6 +132,7 @@ class NavigationMenu extends Component {
                                 titleStyle={{ fontSize: 16, color: "#212326" }}
                                 size={50}
                             />
+                            </TouchableOpacity>
                         ))}
                     </View>
                 </ScrollView>
