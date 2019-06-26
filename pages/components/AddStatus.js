@@ -1,7 +1,17 @@
 import React, { Component } from "react";
-import { View, TextInput, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, Text, TouchableOpacity} from "react-native";
+import { Navigation } from "react-native-navigation";
 
 export default class AddStatus extends Component {
+
+    gotoScreen = () => {
+        Navigation.push(this.props.componentId, {
+            component: {
+                name: "Tes"
+            }
+        });
+    };
+
     render() {
         const upload = require("../../src/img/upload.png");
         return (
@@ -15,13 +25,11 @@ export default class AddStatus extends Component {
                             />
                         </View>
                     </View>
-                    <View style={styles.textInputContainer}>
-                        <TextInput
-                            style={styles.TextInputStatus}
-                            placeholder="Apa yang Anda pikirkan?"
-                            placeholderTextColor="grey"
-                        />
-                    </View>
+                        <View style={styles.textInputContainer}>
+                            <TouchableOpacity onPress={() => this.gotoScreen()}>
+                               <Text style={styles.textInputText}>Apa yang anda pikirkan</Text>
+                            </TouchableOpacity>
+                        </View>
                     <View style={styles.statusUploadContainer}>
                         <View style={styles.statusUpload}>
                             <Image
@@ -77,8 +85,15 @@ const styles = StyleSheet.create({
         flex: 2
     },
     textInputContainer: {
-        flex: 12,
+        borderRadius: 20, 
+        flex: 12, 
+        borderColor: 'grey', 
+        borderWidth: 1, 
+        paddingVertical: 8, 
         marginLeft: 5
+    },
+    textInputText: {
+        paddingLeft: 10
     },
     statusUploadContainer: {
         flex: 2

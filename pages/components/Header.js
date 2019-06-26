@@ -8,7 +8,6 @@ import {
 } from "react-native";
 import TopBar from "./TopBar";
 import { Navigation } from "react-native-navigation";
-import Profile from "./Profile";
 
 export default class Header extends Component {
     gotoScreen = screenName => {
@@ -88,7 +87,6 @@ const styles = StyleSheet.create({
     headerContainer: {
         height: 90,
         borderBottomWidth: 1,
-        marginTop: 25,
         borderBottomColor: "#c1c4c9",
         paddingBottom: 3
     },

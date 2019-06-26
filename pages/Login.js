@@ -1,16 +1,5 @@
 import React, { Component } from "react";
-import {
-    StyleSheet,
-    Text,
-    View,
-    Image,
-    TextInput,
-    ScrollView,
-    Button,
-    StatusBar,
-    TouchableOpacity,
-    TouchableHighlight
-} from "react-native";
+import {AsyncStorage, StyleSheet, Text, View, Image, TextInput, ScrollView, Button, StatusBar, TouchableOpacity, TouchableHighlight } from "react-native";
 import axios from "axios";
 import { Navigation } from "react-native-navigation";
 import Home from "./Home";
@@ -61,14 +50,12 @@ class Login extends Component {
                         }
                     )
                     .then(res => {
-                        const status = res.data.status;
-                        if (status === "OK") {
-                            Navigation.push(this.props.componentId, {
-                                component: {
-                                    name: "Home"
-                                }
-                            });
-                        }
+                        AsyncStorage.setItem('token', res.data.data.token);
+                        Navigation.push(this.props.componentId, {
+                            component: {
+                                name: "Home"
+                            }
+                        });
                     })
                     .catch(err => {
                         console.log(err);
@@ -78,6 +65,17 @@ class Login extends Component {
                 console.log(err);
             });
     };
+
+    async componentDidMount() {
+        const token = await AsyncStorage.getItem('token');
+        if (token !== null) {
+                Navigation.push(this.props.componentId, {
+                    component: {
+                        name: "Home"
+                    }
+                });
+            }
+        }
 
     render() {
         return (

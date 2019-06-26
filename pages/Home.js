@@ -1,21 +1,33 @@
 import React, { Component } from "react";
-import { View, ScrollView, StyleSheet, StatusBar } from "react-native";
+import {AsyncStorage, View, ScrollView, StyleSheet, StatusBar } from "react-native";
 import Header from "../pages/components/Header";
 import AddStatus from "../pages/components/AddStatus";
 import Status from "../pages/components/Status";
 import Story from "../pages/components/Story";
 
 class Home extends Component {
+
+    async componentDidMount() {
+        const token = await AsyncStorage.getItem('token');
+        if (token === null) {
+                Navigation.push(this.props.componentId, {
+                    component: {
+                        name: "Login"
+                    }
+                });
+            }
+        }
+
     render() {
         const photo = require("../src/img/photo.jpeg");
         return (
             <View style={styles.container}>
+                <Header componentId={this.props.componentId} />
                 <StatusBar
                     barStyle="light-content"
                     backgroundColor="#30477C"
                     translucent={true}
                 />
-                <Header componentId={this.props.componentId} />
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <AddStatus photo={photo} />
                     <Story />
