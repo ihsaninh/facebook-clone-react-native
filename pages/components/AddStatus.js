@@ -30,17 +30,17 @@ export default class AddStatus extends Component {
      handleCreate = async () => {
          const token = await AsyncStorage.getItem('token')
          const headers = {
-            'Authorization': 'Bearer ' + token
+            'Authorization': 'Bearer ' + token,
           }
          const post = this.state.post
          const user_id = 2
          data = {
-             headers,
              post,
-             user_id
+             user_id,
+             headers,
          }
          console.log(data)
-         axios.post('http://192.168.0.26:3000/posts/', data)
+         axios.post('http://192.168.0.26:3000/posts', data)
           .then((res) => {
             console.log(res);
           })
