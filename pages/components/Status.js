@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, AsyncStorage } from "react-native";
 import TimeAgo from 'react-native-timeago';
 import StatusHeader from "./StatusHeader";
 import Content from "./Content";
@@ -13,15 +13,18 @@ export default class Status extends Component {
 
         this.state = {
             // status: require("../../data/status.json")
-            posts: []
+            posts: [] 
         };
     }
 
-    componentDidMount() {
-        axios.get('http://192.168.0.26:3000/feeds')
+    async componentDidMount() {
+        const token = await AsyncStorage.getItem('token')
+        const headers = {
+            'Authorization': 'Bearer ' + token
+        }
+        axios.get('http://192.168.0.26:3000/posts', { headers })
           .then(res => {
-            console.log(res.data[0].user.name)
-            const posts = res.data;
+            const posts = res.data
             this.setState( { 
                 posts: posts
             });
@@ -41,7 +44,7 @@ export default class Status extends Component {
                                     postTime={<TimeAgo time={post.createdAt} />}
                                     peopleImg={{uri: post.user.avatar}}
                                 />
-                                <Content fill={post.status} />
+                                <Content fill={post.post} />
                                 <Comment
                                     likeCount="12"
                                     commentCount="89 komentar"

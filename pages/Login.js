@@ -17,7 +17,9 @@ class Login extends Component {
             createAccount: "BUAT AKUN FACEBOOK BARU",
             inputEmail: "",
             inputPassword: "",
-            focused: false
+            focused: false,
+            token: "",
+            userData: []
         };
     }
 
@@ -40,37 +42,25 @@ class Login extends Component {
     }
 
     handleLogin = () => {
-        axios
-            .post("http://192.168.0.26:3000/auth/signin", {
-                email: this.state.inputEmail,
-                password: this.state.inputPassword
-            })
-            .then(res => {
-                const data = res.data.data;
-                axios
-                    .post(
-                        "http://192.168.0.26:3000/auth/create/authorization",
-                        {
-                            user_id: data.id,
-                            name: data.name,
-                            email: data.email
-                        }
-                    )
-                    .then(res => {
-                        AsyncStorage.setItem('token', res.data.data.token);
-                        Navigation.push(this.props.componentId, {
-                            component: {
-                                name: "Home"
-                            }
-                        });
-                    })
-                    .catch(err => {
-                        console.log(err);
-                    });
-            })
-            .catch(err => {
-                console.log(err);
-            });
+
+        axios.post('http://192.168.0.26:3000/auth/login/', {
+            email: this.state.inputEmail,
+            password: this.state.inputPassword
+          })
+          .then(res => {
+            const token    = res.data.token
+            const userId = res.data.data.name 
+            AsyncStorage.setItem('token', token);
+            AsyncStorage.setItem('data', userId);
+                Navigation.push(this.props.componentId, {
+                    component: {
+                        name: "Home"
+                    }
+                });
+          })
+          .catch( () => {
+            console.log(error);
+          });
     };
 
     async componentDidMount() {
