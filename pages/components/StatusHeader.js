@@ -1,10 +1,85 @@
 import React, { Component } from "react";
-import { View, Text, Image, StyleSheet } from "react-native";
+import {
+    View,
+    Text,
+    Image,
+    StyleSheet,
+    TouchableOpacity,
+    Modal,
+    TextInput
+} from "react-native";
+import { Icon } from "react-native-elements";
+import { ListItem } from "react-native-elements";
 
 export default class StatusHeader extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            modalVisible: false
+        };
+    }
+
+    setModalVisible(visible) {
+        this.setState({ modalVisible: visible });
+    }
+
     render() {
+        const edit = require("../../src/img/account.png");
         return (
             <View style={styles.singlePostContainer}>
+                <Modal
+                    style={{ height: 300, width: 300 }}
+                    animationType="slide"
+                    hardwareAccelerated={true}
+                    transparent={true}
+                    visible={this.state.modalVisible}
+                    onRequestClose={() => {
+                        this.setModalVisible(!this.state.modalVisible);
+                    }}>
+                    <View
+                        style={{
+                            flex: 1,
+                            justifyContent: "center",
+                            alignItems: "center",
+                            position: "relative"
+                        }}>
+                        <View
+                            style={{
+                                height: "20%",
+                                backgroundColor: "#ddd",
+                                position: "absolute",
+                                borderTopColor: '#ccc',
+                                borderTopWidth: 1,
+                                bottom: 0,
+                                right: 0,
+                                left: 0
+                            }}>
+                            <View>
+                            <TouchableOpacity>
+                                <ListItem
+                                   leftIcon={{ type: 'material', name: 'edit' }}
+                                    title="Edit status"
+                                    titleStyle={{
+                                        fontSize: 16,
+                                        color: "#212326"
+                                    }}
+                                />
+                            </TouchableOpacity>
+                            <TouchableOpacity>
+                                <ListItem
+                                    style={{ marginTop: -15 }}
+                                    leftIcon={{ type: 'material', name: 'delete' }}
+                                    title="Delete status"
+                                    titleStyle={{
+                                        fontSize: 16,
+                                        color: "#212326"
+                                    }}
+                                />
+                              </TouchableOpacity>
+                            </View>
+                        </View>
+                    </View>
+                </Modal>
                 <View style={styles.singlePostImg}>
                     <Image
                         style={styles.singlePostImgPic}
@@ -25,9 +100,16 @@ export default class StatusHeader extends Component {
                         </Text>
                     </View>
                 </View>
-                <View style={styles.singlePostMore}>
-                    <Text>•••</Text>
-                </View>
+                <TouchableOpacity
+                    onPress={
+                        (onPress = () => {
+                            this.setModalVisible(true);
+                        })
+                    }>
+                    <View style={styles.singlePostMore}>
+                        <Icon name="more-horiz" type="material" color="#333" />
+                    </View>
+                </TouchableOpacity>
             </View>
         );
     }
@@ -57,8 +139,7 @@ const styles = StyleSheet.create({
         fontSize: 14
     },
     singlePostMore: {
-        flex: 1,
-        paddingTop: 4
+        flex: 1
     },
     singlePostPrivacy: {
         width: 12,

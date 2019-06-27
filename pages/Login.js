@@ -48,15 +48,18 @@ class Login extends Component {
             password: this.state.inputPassword
           })
           .then(res => {
+            console.log(res)
             const token    = res.data.token
-            const userId = res.data.data.name 
+            const userId    = res.data.token
             AsyncStorage.setItem('token', token);
             AsyncStorage.setItem('data', userId);
-                Navigation.push(this.props.componentId, {
-                    component: {
-                        name: "Home"
+                Navigation.setStackRoot(this.props.componentId, [
+                {
+                component: {
+                      name: 'Home',
                     }
-                });
+                 }
+            ]);
           })
           .catch( () => {
             console.log(error);
@@ -66,11 +69,13 @@ class Login extends Component {
     async componentDidMount() {
         const token = await AsyncStorage.getItem('token');
         if (token !== null) {
-                Navigation.push(this.props.componentId, {
+                Navigation.setStackRoot(this.props.componentId, [
+                    {
                     component: {
-                        name: "Home"
-                    }
-                });
+                          name: 'Home',
+                        }
+                     }
+                ]);
             }
         }
 

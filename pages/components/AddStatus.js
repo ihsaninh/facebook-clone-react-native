@@ -1,18 +1,9 @@
 import React, { Component } from "react";
-import { View, Image, StyleSheet, Text, TouchableOpacity, Button, Modal, TouchableHighlight, TextInput, AsyncStorage} from "react-native";
+import { View, Image, StyleSheet, Text, TouchableOpacity, Modal, TextInput, AsyncStorage} from "react-native";
 import axios from "axios";
-import { Navigation } from "react-native-navigation";
 import { Icon } from 'react-native-elements'
 
 export default class AddStatus extends Component {
-
-    // gotoScreen = (screenName) => {
-    //    Navigation.push(this.props.componentId, {
-    //         component: {
-    //             name: "MarketPlace"
-    //         }
-    //     });
-    // };
 
     constructor(props) {
       super(props);
@@ -37,12 +28,10 @@ export default class AddStatus extends Component {
          data = {
              post,
              user_id,
-             headers,
          }
-         console.log(data)
-         axios.post('http://192.168.0.26:3000/posts', data)
+         axios.post('http://192.168.0.26:3000/posts', data, {headers: headers})
           .then((res) => {
-            console.log(res);
+              this.setState({modalVisible: !this.state.modalVisible});
           })
           .catch((error) => {
             console.log(error);
@@ -55,6 +44,7 @@ export default class AddStatus extends Component {
             <View>
                 <Modal
                   animationType="slide"
+                  hardwareAccelerated= {true}
                   transparent={false}
                   visible={this.state.modalVisible}
                   onRequestClose={() => {
@@ -74,7 +64,7 @@ export default class AddStatus extends Component {
                         <Text style={{marginLeft: 10,marginTop: 13, fontSize: 20, fontWeight: '500', color: '#333'}}>Tambah Postingan</Text>
                         <View>
                             <TouchableOpacity onPress={this.handleCreate}>
-                                <Text style={{marginTop: 15, marginLeft: 90, fontSize: 16, fontWeight: '500', textTransform: 'uppercase', color: '#ccc'}}>Kirim</Text>
+                                <Text style={{marginTop: 15, marginLeft: 90, fontSize: 16, fontWeight: '500', textTransform: 'uppercase', color: '#aaa'}}>Kirim</Text>
                             </TouchableOpacity>
                         </View>
                     </View>
@@ -129,7 +119,6 @@ export default class AddStatus extends Component {
                                 }
                        />
                   </View>
-
                 </Modal>
                 <View style={styles.addStatus}>
                     <View style={styles.addStatusContainer}>

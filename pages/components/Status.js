@@ -13,7 +13,8 @@ export default class Status extends Component {
 
         this.state = {
             // status: require("../../data/status.json")
-            posts: [] 
+            posts: [],
+            likecount: 10 
         };
     }
 
@@ -28,6 +29,12 @@ export default class Status extends Component {
             this.setState( { 
                 posts: posts
             });
+          })
+      }
+
+      addLikeCount = () => {
+          this.setState({
+              likecount: this.state.likecount + 1
           })
       }
 
