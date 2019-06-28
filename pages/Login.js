@@ -48,11 +48,9 @@ class Login extends Component {
             password: this.state.inputPassword
           })
           .then(res => {
-            console.log(res)
+            console.log(res.data.data.id)
             const token    = res.data.token
-            const userId    = res.data.token
             AsyncStorage.setItem('token', token);
-            AsyncStorage.setItem('data', userId);
                 Navigation.setStackRoot(this.props.componentId, [
                 {
                 component: {

@@ -30,3 +30,5 @@ Navigation.setDefaultOptions({
         backgroundColor: "white"
     }
 });
+
+console.disableYellowBox = true;

@@ -23,18 +23,16 @@ export default class AddStatus extends Component {
          const headers = {
             'Authorization': 'Bearer ' + token,
           }
-         const post = this.state.post
-         const user_id = 2
-         data = {
-             post,
-             user_id,
+         const data = {
+           post: this.state.post
          }
+         const post = this.state.post
          axios.post('http://192.168.0.26:3000/posts', data, {headers: headers})
           .then((res) => {
               this.setState({modalVisible: !this.state.modalVisible});
           })
           .catch((error) => {
-            console.log(error);
+            alert(error);
           })
         }
 
