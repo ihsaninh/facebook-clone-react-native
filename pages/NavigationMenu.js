@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import { View, Image, ScrollView, TouchableOpacity } from "react-native";
+import { View, Image, ScrollView, TouchableOpacity, AsyncStorage } from "react-native";
 import Header from "./components/Header";
 import { ListItem } from "react-native-elements";
 import { Divider } from "react-native-elements";
+import { Navigation } from "react-native-navigation";
 
 class NavigationMenu extends Component {
     constructor(props) {
@@ -11,6 +12,18 @@ class NavigationMenu extends Component {
         this.state = {
             navLists: require("../data/navigationmenu.json")
         };
+    }
+
+    handleLogout = async () => {
+        const token = await AsyncStorage.getItem('token')
+        AsyncStorage.removeItem('token');
+        Navigation.setStackRoot(this.props.componentId, [
+            {
+            component: {
+                  name: 'Login',
+                }
+             }
+        ]);
     }
 
     render() {
@@ -92,10 +105,6 @@ class NavigationMenu extends Component {
                 name: "Pengaturan dan Privasi",
                 avatar_url: require("../src/img/settings-privacy.png")
             },
-            {
-                name: "Keluar",
-                avatar_url: require("../src/img/logout.png")
-            }
         ];
         return (
             <View>
@@ -118,7 +127,7 @@ class NavigationMenu extends Component {
                         ))}
                     </View>
                     <Divider style={{ backgroundColor: "#CED2D7" }} />
-                    <View style={{ marginBottom: 80 }}>
+                    <View style={{ marginBottom: 110 }}>
                         {navlists.map((navlist, index) => (
                             <TouchableOpacity  key={index}>
                             <ListItem
@@ -134,6 +143,19 @@ class NavigationMenu extends Component {
                             />
                             </TouchableOpacity>
                         ))}
+                        <TouchableOpacity onPress={this.handleLogout}>
+                            <ListItem
+                                leftAvatar={
+                                    <Image
+                                        style={{ height: 30, width: 30 }}
+                                        source={require("../src/img/logout.png")}
+                                    />
+                                }
+                                title="Keluar"
+                                titleStyle={{ fontSize: 16, color: "#212326" }}
+                                size={50}
+                            />
+                        </TouchableOpacity>
                     </View>
                 </ScrollView>
             </View>

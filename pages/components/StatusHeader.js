@@ -6,10 +6,12 @@ import {
     StyleSheet,
     TouchableOpacity,
     Modal,
-    TextInput
+    TextInput,
+    AsyncStorage
 } from "react-native";
 import { Icon } from "react-native-elements";
 import { ListItem } from "react-native-elements";
+import axios from "axios";
 
 export default class StatusHeader extends Component {
     constructor(props) {
@@ -23,6 +25,22 @@ export default class StatusHeader extends Component {
         this.setState({ modalVisible: visible });
     }
 
+    handleDelete = async (id) => {
+        const token = await AsyncStorage.getItem('token')
+        const headers = {
+            'Authorization': 'Bearer ' + token,
+        }
+        var id = id
+        axios.delete(`http://192.168.0.26:3000/posts/${id}`,{headers: headers})
+            .then((res) => {
+                this.setState({modalVisible: !this.state.modalVisible});
+                alert('data berhasil dihapus')
+            })
+            .catch((error) => {
+                alert(error);
+            })
+        }
+    
     render() {
         const edit = require("../../src/img/account.png");
         return (
@@ -65,7 +83,7 @@ export default class StatusHeader extends Component {
                                     }}
                                 />
                             </TouchableOpacity>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => this.handleDelete(this.props.id)}>
                                 <ListItem
                                     style={{ marginTop: -15 }}
                                     leftIcon={{ type: 'material', name: 'delete' }}

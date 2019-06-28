@@ -12,7 +12,6 @@ export default class Status extends Component {
         super(props);
 
         this.state = {
-            // status: require("../../data/status.json")
             posts: [],
             likecount: 10 
         };
@@ -47,6 +46,7 @@ export default class Status extends Component {
                         <View key={index}>
                             <View style={styles.peopleStatusContainer}>
                                 <StatusHeader
+                                    id={post.id}
                                     name={post.user.name}
                                     postTime={<TimeAgo time={post.createdAt} />}
                                     peopleImg={{uri: post.user.avatar}}
