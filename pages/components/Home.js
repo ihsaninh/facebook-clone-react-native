@@ -20,7 +20,7 @@ class Home extends Component {
                     <AddStatus photo={photo} />
                     <Story />
                     <View style={styles.lineBorder} />
-                    <Status />
+                    <Status componentId={this.props.componentId}/>
                 </ScrollView>
             </View>
         );

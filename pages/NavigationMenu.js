@@ -49,7 +49,7 @@ class NavigationMenu extends Component {
                         ))}
                     </View>
                     <Divider style={{ backgroundColor: "#CED2D7" }} />
-                    <View style={{ marginBottom: 110 }}>
+                    <View style={{ marginBottom: 120 }}>
                         {navlists.map((navlist, index) => (
                             <TouchableOpacity  key={index}>
                             <ListItem

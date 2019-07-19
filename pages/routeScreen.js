@@ -8,7 +8,7 @@ import AddFriend from "./AddFriend";
 import NavigationMenu from "./NavigationMenu";
 import Notfound from "./Notfound";
 import Notification from "./Notification";
-import AddStatus from "./components/AddStatus"
+import EditPost from "./EditPost"
 
 export function routeScreen() {
     Navigation.registerComponent("Login", () => Login);
@@ -19,4 +19,5 @@ export function routeScreen() {
     Navigation.registerComponent("Notfound", () => Notfound);
     Navigation.registerComponent("Notification", () => Notification);
     Navigation.registerComponent("AddStatus", () => AddStatus);
+    Navigation.registerComponent("EditPost", () => EditPost);
 }

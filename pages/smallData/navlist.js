@@ -22,58 +22,58 @@ export const lists = [
 export const navlists = [
     {
         name: "BKK SMK NEGERI 2 BOGOR",
-        avatar_url: require("../src/img/BKK.png")
+        avatar_url: require("../../src/img/BKK.png")
     },
     {
         name: "Teman",
-        avatar_url: require("../src/img/friend.png")
+        avatar_url: require("../../src/img/friend.png")
     },
     {
         name: "Messenger",
-        avatar_url: require("../src/img/messages.png")
+        avatar_url: require("../../src/img/messages.png")
     },
     {
         name: "Halaman",
-        avatar_url: require("../src/img/pages.png")
+        avatar_url: require("../../src/img/pages.png")
     },
     {
         name: "Grup",
-        avatar_url: require("../src/img/grouplist.png")
+        avatar_url: require("../../src/img/grouplist.png")
     },
     {
         name: "Marketplace",
-        avatar_url: require("../src/img/marketplace.png")
+        avatar_url: require("../../src/img/marketplace.png")
     },
     {
         name: "Video di Watch",
-        avatar_url: require("../src/img/watcht.png")
+        avatar_url: require("../../src/img/watcht.png")
     },
     {
         name: "Acara",
-        avatar_url: require("../src/img/event.png")
+        avatar_url: require("../../src/img/event.png")
     },
     {
         name: "Kenangan",
-        avatar_url: require("../src/img/memories.png")
+        avatar_url: require("../../src/img/memories.png")
     },
     {
         name: "Tersimpan",
-        avatar_url: require("../src/img/saved.png")
+        avatar_url: require("../../src/img/saved.png")
     },
     {
         name: "Tempat di Sekitar",
-        avatar_url: require("../src/img/location.png")
+        avatar_url: require("../../src/img/location.png")
     },
     {
         name: "Teman di Sekitar",
-        avatar_url: require("../src/img/friendnear.png")
+        avatar_url: require("../../src/img/friendnear.png")
     },
     {
         name: "Lihat Lainnya",
-        avatar_url: require("../src/img/see-more.png")
+        avatar_url: require("../../src/img/see-more.png")
     },
     {
         name: "Pengaturan dan Privasi",
-        avatar_url: require("../src/img/settings-privacy.png")
+        avatar_url: require("../../src/img/settings-privacy.png")
     },
 ];

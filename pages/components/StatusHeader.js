@@ -17,12 +17,12 @@ export default class StatusHeader extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            modalVisible: false
+            modalVisibleInfo: false
         };
     }
 
-    setModalVisible(visible) {
-        this.setState({ modalVisible: visible });
+    setmodalVisibleInfo(visible) {
+        this.setState({ modalVisibleInfo: visible });
     }
 
     handleDelete = async (id) => {
@@ -33,13 +33,31 @@ export default class StatusHeader extends Component {
         var id = id
         axios.delete(`http://192.168.0.26:3000/posts/${id}`,{headers: headers})
             .then((res) => {
-                this.setState({modalVisible: !this.state.modalVisible});
+                this.setState({modalVisibleInfo: !this.state.modalVisibleInfo});
                 alert('data berhasil dihapus')
             })
             .catch((error) => {
                 alert(error);
             })
         }
+
+    // handleUpdate = async (id) => {
+    //      const token = await AsyncStorage.getItem('token')
+    //      const headers = {
+    //         'Authorization': 'Bearer ' + token,
+    //       }
+    //      const data = {
+    //        post: this.state.post
+    //      }
+    //      const post = this.state.post
+    //      axios.put(`http://192.168.0.26:3000/posts/${id}`, data, {headers: headers})
+    //       .then((res) => {
+    //           Navigation.pop(this.props.componentId);
+    //       })
+    //       .catch((error) => {
+    //         alert(error);
+    //       })
+    //     }
     
     render() {
         const edit = require("../../src/img/account.png");
@@ -50,9 +68,9 @@ export default class StatusHeader extends Component {
                     animationType="slide"
                     hardwareAccelerated={true}
                     transparent={true}
-                    visible={this.state.modalVisible}
+                    visible={this.state.modalVisibleInfo}
                     onRequestClose={() => {
-                        this.setModalVisible(!this.state.modalVisible);
+                        this.setmodalVisibleInfo(!this.state.modalVisibleInfo);
                     }}>
                     <View
                         style={{
@@ -73,7 +91,7 @@ export default class StatusHeader extends Component {
                                 left: 0
                             }}>
                             <View>
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => this.handleUpdate(this.props.id)}>
                                 <ListItem
                                    leftIcon={{ type: 'material', name: 'edit' }}
                                     title="Edit status"
@@ -98,6 +116,7 @@ export default class StatusHeader extends Component {
                         </View>
                     </View>
                 </Modal>
+                
                 <View style={styles.singlePostImg}>
                     <Image
                         style={styles.singlePostImgPic}
@@ -121,7 +140,7 @@ export default class StatusHeader extends Component {
                 <TouchableOpacity
                     onPress={
                         (onPress = () => {
-                            this.setModalVisible(true);
+                            this.setmodalVisibleInfo(true);
                         })
                     }>
                     <View style={styles.singlePostMore}>

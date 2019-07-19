@@ -38,6 +38,7 @@ export default class Status extends Component {
       }
 
     render() {
+        const componentId = this.props.componentId
         return (
             <View>
                 <View style={styles.lineBorder} />
@@ -50,10 +51,11 @@ export default class Status extends Component {
                                     name={post.user.name}
                                     postTime={<TimeAgo time={post.createdAt} />}
                                     peopleImg={{uri: post.user.avatar}}
+                                    componentId={componentId}
                                 />
                                 <Content fill={post.post} />
                                 <Comment
-                                    likeCount="12"
+                                    likeCount={this.state.likecount}
                                     commentCount="89 komentar"
                                 />
                                 <FooterPost />
