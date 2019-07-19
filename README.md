@@ -54,13 +54,13 @@ Facebook offers other products and services. It acquired Instagram, WhatsApp, Oc
 
 ## Screenshoot
 <div align="center">
-    <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshoots/LOGIN.png">   
-    <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshoots/FEED.png">  
-    <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshoots/FRIENDLIST.png">    
-    <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshoots/ADDSTATUS.png">   
-    <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshoots/MARKETPLACE.png">   
-    <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshoots/MORESETTING.png">   
-    <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshoots/NOTIFICATION.png">   
+    <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshots/LOGIN.png">   
+    <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshots/FEED.png">  
+    <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshots/FRIENDLIST.png">    
+    <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshots/ADDSTATUS.png">   
+    <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshots/MARKETPLACE.png">   
+    <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshots/MORESETTING.png">   
+    <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshots/NOTIFICATION.png">   
 </div>
 
 
