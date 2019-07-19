@@ -43,7 +43,7 @@ Facebook offers other products and services. It acquired Instagram, WhatsApp, Oc
    ```
 2. Install all depedencies on the package.json
    ```
-      cdfb-clone-react-native
+      cd fb-clone-react-native
       npm install or yarn (if you using yarn)
    ```
 3. Run Facebook Clone
@@ -53,7 +53,7 @@ Facebook offers other products and services. It acquired Instagram, WhatsApp, Oc
    ```
 
 ## Screenshoot
-<div align="center">
+<div>
     <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshots/LOGIN.png">   
     <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshots/FEED.png">  
     <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshots/FRIENDLIST.png">    
