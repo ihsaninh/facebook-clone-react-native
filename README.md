@@ -53,7 +53,7 @@ Facebook offers other products and services. It acquired Instagram, WhatsApp, Oc
    ```
 
 ## Screenshoot
-<div class="display: inline-block; float: left">
+<div align="center">
     <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshots/LOGIN.png">   
     <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshots/FEED.png">  
     <img src="https://github.com/ihsaninh/fb-clone-react-native/blob/master/screenshots/FRIENDLIST.png">    
